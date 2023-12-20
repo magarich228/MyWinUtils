@@ -4,5 +4,9 @@
 int main(void)
 {
     HWND foreground = GetForegroundWindow();
-    printf("%d", CloseWindow(foreground));
+
+    if (!CloseWindow(foreground))
+    {
+        printf_s("Failed to close the window.");
+    }
 }
